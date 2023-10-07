@@ -18,7 +18,7 @@
 
 
 <a class="btn btn-secondary" href="{% url 'polls:index' %}">Back To Polls</a>
-<a class="btn btn-dark" href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<a class="btn btn-dark" href="{% url 'polls:vote' question.id %}">Vote again?</a>
 
 <script>
 
@@ -29,7 +29,7 @@
 
 	var objId = "{{question.id}}"
 
-	var dataURL = `/polls/resultsdata/${objId}/`
+	var dataURL = `/resultsdata/${objId}/`
 	$.ajax({
 		method:'GET',
 		url:dataURL,
